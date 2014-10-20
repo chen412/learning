@@ -1,0 +1,45 @@
+****************
+共同寫作操作流程
+****************
+
+相關軟體安裝
+============
+
+#. `TortoiseGit <https://code.google.com/p/tortoisegit/>`_ `(安裝教學) <../software/TortoiseGit.html>`_
+#. `Git <http://www.git-scm.com/download/win>`_ `(安裝教學) <../software/Git.html>`_
+
+建立使用者帳號(SSH-KEY)
+=======================
+
+在安裝好TortoiseGit與Git後，使用此軟體建立ssh公鑰(Public Key)與私鑰(Private Key)，安裝的兩個軟體都可以建立ssh-key，使用安裝TortoiseGit附帶一起安裝的 `Puttygen <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_ 建立，此方式是有圖形介面(GUI)，較容易看到所產生的內容，操作方式請參照 :ref:`ssh-key-puttygen`，如果要使用Git Bash建立ssh-key請參照 :ref:`ssh-key-gitbash`，此方式是屬於文字介面，操作方式如Windows的『命令題示字元模式』與Linux的『console模式』，但操作的指令比較像Linux的console模式。
+
+.. _ssh-key-puttygen:
+
+Puttygen建立ssh-key
+-------------------
+
+* 啟動Puttygen，打開『開始程式集』，找到 **TortoiseGit** 點選打開後就會看到如下圖的內容，點選執行『Puttygen』
+
+ .. image:: pic/puttygen-001.png
+
+* 啟動Puttygen後的畫面如下
+
+ .. image:: pic/puttygen-002.png
+
+* 點選畫面中的『Generate』，或者是上方選單的『Key->Generate key pair』，點選後會看到畫面上多了一串字『Please generate some randmness by moving the mouse over the blank area.』，簡單來說就是『請在key的空白區塊移動滑鼠以產生ssh-key』及一個Process Bar以顯示ssh-key產生的進度。
+
+ .. image:: pic/puttygen-003.png
+
+* 不斷的在key的空白區塊移動滑鼠時，Process Bar的目前進度就會一直增加
+* 
+ .. image:: pic/puttygen-004.png
+
+* 當Process Bar跑完全都變綠色時，代表已完成產生ssh-key，這時key的空白區塊就會改變成顯示所產生的ssh-key
+ 
+ .. image:: pic/puttygen-005.png
+
+  這時可用下方的『Save private key』按鈕來儲存私鑰，點選按鈕後會跳出存儲視窗，先選擇要存放的資料夾，接著在檔案名稱的地方輸入檔名，副檔名為『ppk』，最後點選存檔即可。
+
+  公鑰正常來說也是點選『Save public key』然後一樣的方式就可以完成，但發現直接存檔，把此公鑰放在伺服器上面時會無法正常使用，最後發現因為在每64個字母後面就加一個空白，因為此空白造成上傳到伺服器時無法正常的運作，只要用文字編輯器打開，將每64個字母後方的空白刪除後存檔即可，另外一個方式就是將『Public key for pasting into OpenSSH authorized_keys file:』下方區塊的內容全選複製，然後打開文字編輯器，貼上所選取的public key，再儲存檔案就可以了，公鑰的副檔名為『pub』。
+
+  建議：公鑰部分，直接複製貼上畫面中的Public key，避免在刪除空白時不小時刪錯，造成無法使用。

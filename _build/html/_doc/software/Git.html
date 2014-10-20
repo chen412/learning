@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git 安裝 &mdash; 系統安裝記錄 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="系統安裝記錄 1.0 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="git">
+<h1>Git 安裝<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>下載安裝程式<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>先到Git的網站 <a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a> 下載安裝程式，進入首頁後會看到畫面中有『Downloads for Windows』的連結，點選後會直接下載Winddows版本的GIT，如果要下載其他作業系統的GIT請點選『Downloads』進去後就會看到Mac OS X、Windows、Linux、Solaris的版本供下載。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitDownload-001.png" src="../../_images/GitDownload-001.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>安裝主程式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>下載完成後，執行安裝程式，選擇開始安裝並同意版權聲明</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-001.png" src="../../_images/Git-001.png" />
+<img alt="../../_images/Git-002.png" src="../../_images/Git-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>選擇安裝目錄，使用預設值，『Next』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-003.png" src="../../_images/Git-003.png" />
+</div></blockquote>
+<ul class="simple">
+<li>元件安裝，下圖中預設值『Additional icons』是不勾選的，勾選後會將程式建立捷徑到『桌面』及『Quick Launch』，Quick Launch是Windows下專門放程式捷徑的資料夾，如果要啟用在『工作列點選滑鼠右鍵-&gt;工具列-&gt;新增工具列』，會出現一個選擇資料夾的視窗，直接貼上『%userprofile%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch』確認後在工具列下方就會出現一個『Quick Launch』的快捷工具列，裡面就可以看到『Git Bash』的捷徑</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-004.png" src="../../_images/Git-004.png" />
+</div></blockquote>
+<ul class="simple">
+<li>另外一個選項是會在滑鼠右鍵的功能列中加入Git的選項，預設值為『Advanced context menu(git-cheetah Plugin)』</li>
+</ul>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>『Advanced context menu(git-cheetah Plugin)』安裝完後的畫面如下</strong></dt>
+<dd><img alt="../../_images/Git-011.png" class="first last" src="../../_images/Git-011.png" />
+</dd>
+<dt><strong>『Simple context menu(Registry based)』安裝完後的畫面如下</strong></dt>
+<dd><img alt="../../_images/Git-012.png" class="first last" src="../../_images/Git-012.png" />
+</dd>
+</dl>
+</div></blockquote>
+<ul class="simple">
+<li>設定開始程式集的位置及名稱，使用預設值即可</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-005.png" src="../../_images/Git-005.png" />
+</div></blockquote>
+<ul class="simple">
+<li>PATH 環境變數，一樣使用預設值『Use Git Bash only』，此選項也不會對PATH環境變數做修改</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-006.png" src="../../_images/Git-006.png" />
+</div></blockquote>
+<ul class="simple">
+<li>在這一步請選擇Use(Tortoise)Plink，如果有安裝TortoiseGit，在安裝Git時會自動帶入Plink的程式路徑『C:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-007.png" src="../../_images/Git-007.png" />
+</div></blockquote>
+<ul class="simple">
+<li>設定斷行字元轉換模式，在Linux作業系統下，文字檔案的斷行字元為『LF(\n)』1個Byte，在Windows作業系統下，文字檔案的斷行字元卻是『CRLF(\r\n)』2個Byte，為了處理這個問題，Git在安裝時有一個自動轉換斷行字元的選項。自動從Git檔案庫(Repo)與本機的檔案庫自動轉換斷行字元，在這邊使用預設的選項即可『Checkout Windows-style,commit Unix-style line endings』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-008.png" src="../../_images/Git-008.png" />
+</div></blockquote>
+<ul class="simple">
+<li>安裝中</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-009.png" src="../../_images/Git-009.png" />
+</div></blockquote>
+<ul class="simple">
+<li>安裝完成</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Git-010.png" src="../../_images/Git-010.png" />
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Git 安裝</a><ul>
+<li><a class="reference internal" href="#id1">下載安裝程式</a></li>
+<li><a class="reference internal" href="#id2">安裝主程式</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/_doc/software/Git.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, 陳國華.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}SPHINX-DOC 安裝}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}測試環境}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}安裝SPHINX-DOC}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}建立SPHINX-DOC專案}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}匯出HTML網站}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}匯出PDF}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}匯出ePub}{4}{section.1.6}
+\contentsline {section}{\numberline {1.7}參考網站連結}{5}{section.1.7}
+\contentsline {chapter}{\numberline {2}GIT 安裝}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}Ubuntu 安裝}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}test中文測試}{11}{chapter.4}
+\contentsline {chapter}{\numberline {5}Indices and tables}{13}{chapter.5}

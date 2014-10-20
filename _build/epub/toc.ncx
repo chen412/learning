@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="2"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>系統安裝記錄</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>Welcome to 系統安裝記錄&#39;s documentation!</text>
+      </navLabel>
+      <content src="index.html" />
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>SPHINX-DOC 安裝</text>
+      </navLabel>
+      <content src="_doc/sphinx-doc/index.html" />
+      <navPoint id="navPoint3" playOrder="2">
+        <navLabel>
+          <text>SPHINX-DOC 安裝</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html" />
+      </navPoint>
+      <navPoint id="navPoint4" playOrder="3">
+        <navLabel>
+          <text>測試環境</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#id1" />
+      </navPoint>
+      <navPoint id="navPoint5" playOrder="4">
+        <navLabel>
+          <text>安裝SPHINX-DOC</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#id2" />
+      </navPoint>
+      <navPoint id="navPoint6" playOrder="5">
+        <navLabel>
+          <text>建立SPHINX-DOC專案</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#id4" />
+      </navPoint>
+      <navPoint id="navPoint7" playOrder="6">
+        <navLabel>
+          <text>匯出HTML網站</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#html" />
+      </navPoint>
+      <navPoint id="navPoint8" playOrder="7">
+        <navLabel>
+          <text>匯出PDF</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#pdf" />
+      </navPoint>
+      <navPoint id="navPoint9" playOrder="8">
+        <navLabel>
+          <text>匯出ePub</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#epub" />
+      </navPoint>
+      <navPoint id="navPoint10" playOrder="9">
+        <navLabel>
+          <text>參考網站連結</text>
+        </navLabel>
+        <content src="_doc/sphinx-doc/index.html#id6" />
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint11" playOrder="10">
+      <navLabel>
+        <text>GIT 安裝</text>
+      </navLabel>
+      <content src="_doc/git/index.html" />
+    </navPoint>
+    <navPoint id="navPoint12" playOrder="11">
+      <navLabel>
+        <text>Ubuntu 安裝</text>
+      </navLabel>
+      <content src="_doc/ubuntu/index.html" />
+    </navPoint>
+    <navPoint id="navPoint13" playOrder="12">
+      <navLabel>
+        <text>test中文測試</text>
+      </navLabel>
+      <content src="_doc/test/index.html" />
+    </navPoint>
+  </navMap>
+</ncx>

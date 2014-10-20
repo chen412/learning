@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GIT、Gitolite3、Gitweb安裝 &mdash; 系統安裝記錄 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="系統安裝記錄 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="共同寫作操作流程" href="../writing/index.html" />
+    <link rel="prev" title="SPHINX-DOC 安裝 (Windows)" href="../sphinx-doc-win/index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../writing/index.html" title="共同寫作操作流程"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sphinx-doc-win/index.html" title="SPHINX-DOC 安裝 (Windows)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="gitgitolite3gitweb">
+<h1>GIT、Gitolite3、Gitweb安裝<a class="headerlink" href="#gitgitolite3gitweb" title="Permalink to this headline">¶</a></h1>
+<p>在多人開發的過程中，為了便於整合不同使用者所建立的內容，在版本管控的多種系統中，如： <a class="reference external" href="http://www.nongnu.org/cvs/">CVS</a> 、 <a class="reference external" href="http://subversion.apache.org/">Subversion</a> 、 <a class="reference external" href="http://git-scm.com/">Git</a> 幾個主要的系統中選用Git當作開發的版本管控系統，主要為了之後可能會轉移到github上，再加上git的一些特性，如可快速的建立分支，不需中央伺服器即可在本地的檔案庫中做管理等…。</p>
+<p>另外搭配 <a class="reference external" href="http://gitolite.com">Gitolite</a> 來管理使用者及檔案庫(Repository)，讓管理者便於設定檔案庫的存取權限，Gitolite綁定一個系統帳號，而其他的使用者都是透過ssh key建立，只要把key的名稱設定權限後，即可設定key及檔案庫的讀寫、執行或只能讀取等，並透過gitweb讓使用者用瀏覽器就可以觀看檔案庫的內容、記錄、版本差異、下載等功能。</p>
+<div class="section" id="id1">
+<h2>GIT安裝<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><strong>安裝GIT</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo apt-get install git-core
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>新增使用者git</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo useradd -m git
+sudo passwd git
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>設置使用者的git全域參數</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo su -l git
+git config --global user.name &quot;username&quot;
+git config --global user.email &quot;email&quot;
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="gitolite3">
+<h2>Gitolite3安裝<a class="headerlink" href="#gitolite3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>在安裝過程式會出現Configuring gitolite3的畫面，要輸入Administrator&#8217;s SSH key，如果尚未產生好ssh key的話可以跳過，之後再設定使用sudo dpkg-reconfigure gitolite3就可以重新設定</div></blockquote>
+<p><strong>安裝gitolite3</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo apt-get install gitolite3
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>執行畫面</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>allen@uServer:/home/git⟫ sudo apt-get install gitolite3
+[sudo] password for allen:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Suggested packages:
+  git-daemon-run gitweb
+The following NEW packages will be installed:
+  gitolite3
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 85.3 kB of archives.
+After this operation, 352 kB of additional disk space will be used.
+Get:1 http://opensource.nchc.org.tw/ubuntu/ trusty/universe gitolite3 all 3.5.3.1-2 [85.3 kB]
+Fetched 85.3 kB in 5s (16.6 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package gitolite3.
+(Reading database ... 121302 files and directories currently installed.)
+Preparing to unpack .../gitolite3_3.5.3.1-2_all.deb ...
+Unpacking gitolite3 (3.5.3.1-2) ...
+Processing triggers for man-db (2.6.7.1-1) ...
+Setting up gitolite3 (3.5.3.1-2) ...
+No adminkey given - not setting up gitolite. Do a dpkg-reconfigure to setup.
+allen@uServer:/home/git⟫
+</pre></div>
+</div>
+<img alt="../../_images/gitolite3-configureing.png" src="../../_images/gitolite3-configureing.png" />
+</div></blockquote>
+<p><strong>產生git ssh key</strong></p>
+<blockquote>
+<div><p>用ssh-keygen指令產生，一般用 <em>ssh-keygen -t rsa</em> 即可產生公鑰、私鑰，預設會建立在家目前中的「.ssh」資料夾中，在建立的過程式可以自行修改公、私鑰的位置及檔名，公鑰預設檔案名稱為「~/.ssh/id_rsa」,，私龠預設檔案名為「~/.ssh/id_rsa.pub」，在產生公、私鑰的過程會要輸入passphrase，預設值是空的，如果要使用密碼請在這裡輸入後再按Enter，這樣之後連線時就會要輸入密碼後才可以登入。如下圖..</p>
+<img alt="../../_images/ssh-keygen.png" src="../../_images/ssh-keygen.png" />
+<p>以上說的內容可以直接用指令執行後即可產生公、私鑰，「-P」加入密碼(passphrase)，「-f」檔案產生的位置與名稱，如下</p>
+</div></blockquote>
+<p><strong>ssh-keygen指令</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>ssh-keygen -t rsa -P &#39;admin@gitolite&#39; -f ~/.ssh/admin
+</pre></div>
+</div>
+<img alt="../../_images/ssh-keygen2.png" src="../../_images/ssh-keygen2.png" />
+</div></blockquote>
+<p><strong>設定配置gitolite3</strong></p>
+<blockquote>
+<div><p>執行下方的設定配置指令後會出現設定畫面，首先出現的是設定gitolite3的系統管理者，在這邊我們預設定的系統管理者為「git」</p>
+<div class="highlight-text"><div class="highlight"><pre>sudo dpkg-reconfigure gitolite3
+</pre></div>
+</div>
+<img alt="../../_images/gitolite3-username.png" src="../../_images/gitolite3-username.png" />
+<p>設定「Repository」資料夾路徑，把Repository設在使用者git的家目錄下</p>
+<img alt="../../_images/gitolite3-repository-path.png" src="../../_images/gitolite3-repository-path.png" />
+<p>接著又回到一開始安裝時要設定的管理者ssh key，這裡用上面所設定admin.pub，要輸入完整的路徑</p>
+<img alt="../../_images/gitolite3-admin-sshkey.png" src="../../_images/gitolite3-admin-sshkey.png" />
+<p>確認後就會看到下面的畫面，在repositories中將會自動產生兩個repo「gitolite-admin.git及testing.git」及一個projects.list，如下圖</p>
+<img alt="../../_images/gitolite3-cmd.png" src="../../_images/gitolite3-cmd.png" />
+<img alt="../../_images/gitolite3-list.png" src="../../_images/gitolite3-list.png" />
+</div></blockquote>
+<p><strong>設定gitolite-admin</strong></p>
+<blockquote>
+<div><p>gitolite-admin主要是用於設定及管理repo與使用者，此外可以設定每個repo的存取權限，gitolite-admin預設只供管理者存取，所以要用設定gitolit3時所設定的administrator&#8217;s ssh key來存取設定。</p>
+<p>目前使用git使用者，也在此使用者建立ssh key，當做gitolite3的管理者，所以先登入git，並在家目錄中clone gitolite-admin做設定</p>
+<div class="highlight-text"><div class="highlight"><pre>git clone git@localhost:gitolite-admin.git
+</pre></div>
+</div>
+<p>在git的家目錄把gitolite-admin取出後，進到gitolite-admin資料夾，將會有兩個檔案，分別為「conf/gitolite.conf」與「keydir/admin.pub」</p>
+<img alt="../../_images/gitolite3-admin-tree.png" src="../../_images/gitolite3-admin-tree.png" />
+<p>「conf/gitolite.conf」預設的內容如下，在gitolite-admin目前設定只供admin做讀寫及更新，其他使用者無法</p>
+<img alt="../../_images/gitolite3-admin-config.png" src="../../_images/gitolite3-admin-config.png" />
+<p>「keydir/admin.pub」keydir資料夾是放使用者ssh公鑰的地方，此資料夾中的admin.pub就是在設定gitolite時所輸入的administrator&#8217;s ssh key。</p>
+</div></blockquote>
+<p><strong>Linux 新增使用者到gitolite3</strong></p>
+<blockquote>
+<div><p>先在自已家目錄中執行ssh-keygen -t rsa 產生公、私鑰，預設會存在~/.ssh/下，將公鑰id_rsa.pub更換名稱，例如目前帳號使用allen，則把id_rsa.pub改成allen.pub，並且把 allen.pub放到gitolite-admin/keydir資料夾下，使用者的公鑰部分可以放到「/tmp」下，這樣切換到時用者時就不需再另外更改檔案擁有者及權限。</p>
+<img alt="../../_images/gitolite3-adduser-1.png" src="../../_images/gitolite3-adduser-1.png" />
+<p>在使用者allen下就先cp一份公鑰到/tmp下，</p>
+<img alt="../../_images/gitolite3-adduser-2.png" src="../../_images/gitolite3-adduser-2.png" />
+<p>接下來就執行git指令，把使用者的公鑰放到gitolite-admin repo中，在過程中有出現「Enter passphrase for key...」這部分因為在建立admin公、私鑰時有輸入密碼，所以在這個時後就需要輸入之前的密碼以確定執行git push上傳更新。</p>
+<img alt="../../_images/gitolite3-adduser-3.png" src="../../_images/gitolite3-adduser-3.png" />
+</div></blockquote>
+<p><strong>新增GIT Repo</strong></p>
+<blockquote>
+<div><p>使用者新增好了之後，我將建立一個給allen專用的repo，加入了</p>
+<div class="highlight-text"><div class="highlight"><pre>repo allen
+        RW+ = allen
+</pre></div>
+</div>
+<p>這樣設定在gitweb預設不會將repo列出，如果要供大家讀取，則再加入一行即可</p>
+<div class="highlight-text"><div class="highlight"><pre>R     =  @all
+</pre></div>
+</div>
+<img alt="../../_images/gitolite3-addrepo-1.png" src="../../_images/gitolite3-addrepo-1.png" />
+<p>接著做相同的動作，如下</p>
+<div class="highlight-text"><div class="highlight"><pre>git add .
+git commit -m &#39;add repo:allen&#39;
+git push
+</pre></div>
+</div>
+<img alt="../../_images/gitolite3-addrepo-2.png" src="../../_images/gitolite3-addrepo-2.png" />
+<p>當執行git指令，把設定檔更新後，回到「~/repositories」中，將會看到自已建立了一個repo「allen.git」</p>
+<img alt="../../_images/gitolite3-addrepo-3.png" src="../../_images/gitolite3-addrepo-3.png" />
+<p>用使用者allen 去clone allen.git，執行完後會如下圖，將會在執行的目錄中增加一個allen的git repo，預設裡面是空的，只有一個.git的設定檔資料夾</p>
+<img alt="../../_images/gitolite3-addrepo-4.png" src="../../_images/gitolite3-addrepo-4.png" />
+</div></blockquote>
+<p><strong>repo初始內容</strong></p>
+<blockquote>
+<div><img alt="../../_images/gitolite3-addrepo-5.png" src="../../_images/gitolite3-addrepo-5.png" />
+</div></blockquote>
+</div>
+<div class="section" id="gitweb">
+<h2>安裝GitWeb<a class="headerlink" href="#gitweb" title="Permalink to this headline">¶</a></h2>
+<p><strong>安装apache2</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo apt-get install apache2
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>設定啟用cgi</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo vim /etc/apache2/sites-enabled/000-default.conf
+把這行前方的#拿掉 「Include conf-available/serve-cgi-bin.conf」
+sudo a2enmod cgi
+sudo apache2 restart
+</pre></div>
+</div>
+<img alt="../../_images/gitolite3-cgi-1.png" src="../../_images/gitolite3-cgi-1.png" />
+</div></blockquote>
+<p><strong>安裝gitweb</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo apt-get install gitweb
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>設定gitweb</strong></p>
+<blockquote>
+<div><p>安裝完後資料放在預設目錄「/usr/share/gitweb/」下，而設定檔放在「/etc/gitweb.conf」，apache2的預設目錄「/var/www/html」，將gitweb會讀取到的相關css及圖檔資料夾static做連結到網站的根目錄</p>
+<div class="highlight-text"><div class="highlight"><pre>sudo ln -s /usr/share/gitweb/static /var/www/html
+</pre></div>
+</div>
+<p>編輯gitweb.conf設定參數如下圖</p>
+<div class="highlight-text"><div class="highlight"><pre>sudo vim /etc/gitweb.conf
+</pre></div>
+</div>
+<p>注意$projectroot，$projects_list要改成自已所設定的路徑</p>
+<img alt="../../_images/gitolite3-gitweb-1.png" src="../../_images/gitolite3-gitweb-1.png" />
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>gitweb權限設定</strong></dt>
+<dd><p class="first">當設定好後啟動apache2，用瀏灠器進入 <a class="reference external" href="http://localhost/cgi-bin/gitweb.cgi">http://localhost/cgi-bin/gitweb.cgi</a> 會發現出現404，並沒有repo專案出現，在這裡需要做算讀取權限的設定</p>
+<img alt="../../_images/gitolite3-gitweb-2.png" src="../../_images/gitolite3-gitweb-2.png" />
+<p>將git加入群組www-data</p>
+<div class="highlight-text"><div class="highlight"><pre>sudo usermod -a -G git www-data
+</pre></div>
+</div>
+<p>資料夾repositories設定為755
+檔案projects.list設定為644
+資料夾repositories中的repo，原本資料夾權限預設為700，群組的部分不能讀取，如果要開放的話，請將該xxx.git資料夾設定為755，如下方指令要開放testing.git，</p>
+<div class="highlight-text"><div class="highlight"><pre>chmod 755 -R testing.git
+</pre></div>
+</div>
+<p>當設定以上的權限後重新啟動apache2即可看到所開放的repo，但如果使用者有做git push後會發現，網頁上該被push過的repo又不見了，但再執行一次chmod 755 -R testing.git後網頁上又出現了，發現在push後有些資料夾的權限會變成預設的700，所以要再做下面的修改，將設定repo預設的建立權限為750，這樣使用者在做push更新時，相關檔案建立時www-data群組就可以做存取的動作，修改如下</p>
+<p>在使用者git家目錄下</p>
+<div class="highlight-text"><div class="highlight"><pre>vim ~/.gitolite.rc
+</pre></div>
+</div>
+<p>將UMASK的預設值0077改成0027後，存儲並重新啟動apache2，再重新push一次後就會發相部分相關檔案在push後所建立的權限為750，並且gitweb網頁也可以正常的觀看。</p>
+<img alt="../../_images/gitolite3-gitweb-3.png" class="last" src="../../_images/gitolite3-gitweb-3.png" />
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>參考網站連結<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Git 版本控制系統 <a class="reference external" href="http://ihower.tw/git/index.html">http://ihower.tw/git/index.html</a></li>
+<li>30天精通Git版本控管 <a class="reference external" href="http://ithelp.ithome.com.tw/ironman6/player/doggy/dev/1">http://ithelp.ithome.com.tw/ironman6/player/doggy/dev/1</a></li>
+<li>Git Community Book 中文版 <a class="reference external" href="http://gitbook.liuhui998.com/index.html">http://gitbook.liuhui998.com/index.html</a></li>
+<li>Pro Git Book <a class="reference external" href="http://git-scm.com/book/zh-tw">http://git-scm.com/book/zh-tw</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GIT、Gitolite3、Gitweb安裝</a><ul>
+<li><a class="reference internal" href="#id1">GIT安裝</a></li>
+<li><a class="reference internal" href="#gitolite3">Gitolite3安裝</a></li>
+<li><a class="reference internal" href="#gitweb">安裝GitWeb</a></li>
+<li><a class="reference internal" href="#id2">參考網站連結</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../sphinx-doc-win/index.html"
+                        title="previous chapter">SPHINX-DOC 安裝 (Windows)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../writing/index.html"
+                        title="next chapter">共同寫作操作流程</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/_doc/git/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../writing/index.html" title="共同寫作操作流程"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sphinx-doc-win/index.html" title="SPHINX-DOC 安裝 (Windows)"
+             >previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, 陳國華.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

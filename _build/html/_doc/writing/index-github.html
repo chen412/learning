@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>共筆寫作操作流程(GitHub) &mdash; 系統安裝記錄 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="系統安裝記錄 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="Ubuntu 安裝" href="../ubuntu/index.html" />
+    <link rel="prev" title="共同寫作操作流程" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ubuntu/index.html" title="Ubuntu 安裝"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="共同寫作操作流程"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="github">
+<h1>共筆寫作操作流程(GitHub)<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h1>
+<p>在上一版的「共同寫作操作流程」文件中是使用 <a class="reference external" href="https://code.google.com/p/tortoisegit/">TortoiseGit</a> 存取Git伺服器上的儲存庫(Repo)，因為最後使用 <a class="reference external" href="https://github.com/">GitHub</a> 平台，所以這篇主要是說明如何透過GitHub的軟體「<a class="reference external" href="https://windows.github.com/">GitHub Windows</a>」共同存取寫作文件，當然也可以透過「<a class="reference external" href="https://windows.github.com/">GitHub Windows</a>」存取Go38 Git伺服器上的儲存庫(Repo)，在「<a class="reference external" href="https://windows.github.com/">GitHub Windows</a> 」軟體的操作上非常的簡單，而且也會自動產生ssh-key，節省了很多的步驟，而且所產生的ssh-key也可以直接供Go38的Git伺服器所使用，而Go38伺服器上的儲存庫(Repo)也可以使用「<a class="reference external" href="https://windows.github.com/">GitHub Windows</a>」存取，下方的流程式為共筆寫作的流程圖。</p>
+<img alt="../../_images/FlowChart.png" src="../../_images/FlowChart.png" />
+<div class="section" id="id5">
+<h2>相關軟體安裝<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>GitHub Windows<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>打開 <a class="reference external" href="https://windows.github.com/">GitHub Windows</a> 網站，首頁就有『Download GitHub for Windows』連結，點選此連結下載</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-001.png" src="../../_images/GitHub-Install-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>下載完後執行安裝程式『GitHubSetup.exe』，如果電腦已經安裝過GitHub Windows，執行後會直接啟動GitHub Windows程式；若沒安裝過，執行後會檢查電腦所需要的元件，如下圖在第一次安裝由於電腦中沒有『Microsoft .NET Framework 4.5(x86 and x64)』這個元件，會要求安裝，點選下方的『Accept』即可</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-002.png" src="../../_images/GitHub-Install-002.png" />
+<img alt="../../_images/GitHub-Install-003.png" src="../../_images/GitHub-Install-003.png" />
+</div></blockquote>
+<ul class="simple">
+<li>如果作業系統已安裝過『Microsoft .NET Framework 4.5(x86 and x64)』元件，執行後就直接出現GitHub安裝視窗，直接點選『Install』開始安裝</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-004.png" src="../../_images/GitHub-Install-004.png" />
+</div></blockquote>
+<ul class="simple">
+<li>下圖為下載及安裝進度視窗，執行完就安裝成功</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-005.png" src="../../_images/GitHub-Install-005.png" />
+</div></blockquote>
+<ul class="simple">
+<li>Connect，安裝完第一次執行GitHub Windows的畫面如下，輸入GitHub帳號及密碼，點選『Log in』登入與GitHub平台連線</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-006.png" src="../../_images/GitHub-Install-006.png" />
+</div></blockquote>
+<ul class="simple">
+<li>Configue，設定git顯示的使用者名稱及E-Mail帳號，輸入完點選『Continue』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-007.png" src="../../_images/GitHub-Install-007.png" />
+</div></blockquote>
+<ul class="simple">
+<li>Repositories，這一步軟體會自動尋找本機的儲存庫(Repo)，如果沒有找到，直接點選『dashboard』，進入軟體主畫面。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Install-008.png" src="../../_images/GitHub-Install-008.png" />
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="github-repo">
+<h2>存取 Github Repo<a class="headerlink" href="#github-repo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clone-repo">
+<h3>複製Clone Repo<a class="headerlink" href="#clone-repo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>當安裝完GitHub Windows後，在還沒有複製(Clone)儲存庫(Repo)的狀況下，會看到如下面GitHub初始畫面，啟動後是很乾淨，什麼都沒有，只有在畫面中出現『Get started by adding a repository.』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Clone-001.png" src="../../_images/GitHub-Clone-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>接下來點選左上角的『+』後會出現一個功能視窗，這個視窗主要的功能就是新增儲存庫(Repo)，可以看到視窗最上方有兩個選項『Creat』和『Clone』, 下圖為『Create』的畫面，設定Name和Local path後，點選下方的『Create repository』，就可以在所選的本機資料夾路徑中建立一個新的Git儲存庫(Repo)，最後可以使用Git Windows軟體發佈到GitHub平台所註冊的帳號中。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Clone-002.png" src="../../_images/GitHub-Clone-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>下圖為『Clone』的畫面，當點選到『Clone』後，下方會自動載入安裝時所登入的GitHub帳號中所有的儲存庫(Repo)</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Clone-003.png" src="../../_images/GitHub-Clone-003.png" />
+</div></blockquote>
+<ul class="simple">
+<li>只要點選名稱，如『go38/MoodleBook』，再點選下方的『Clone repository』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Clone-004.png" src="../../_images/GitHub-Clone-004.png" />
+</div></blockquote>
+<ul class="simple">
+<li>在複製(Clone)之前會出『瀏覽資料夾』的視窗，在此處點選儲存庫(Repo)要放在資料夾，如畫面中為預設的路徑(C:/Users/使用者名稱/我的文件/GitHub)</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Clone-005.png" src="../../_images/GitHub-Clone-005.png" />
+</div></blockquote>
+<ul class="simple">
+<li>確認資料夾後就會開始複製(Clone)到本機電腦，完成後會看到如下的畫面，畫面主要分為三個區塊，左邊為本機的儲存庫(Repo)，如果有多個儲存庫(Repo)可點選做切換，而中間的『History』就是依左方所點選儲存庫(Repo)的歷史推送(Push)記錄，點選中間的歷史推送記錄後，在右方會顯示該次的異動內容，另外在『History』上方有個『master』，這為目前的分支(Branch)名稱，點選後可以切換分支或建立新的分支。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Clone-006.png" src="../../_images/GitHub-Clone-006.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3>檔案新增刪除修改<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>把共筆的儲檔庫(Repo)複製(Clone)到本機資料夾中後就可以開始編寫內容，當想把編寫好的內容放到遠端時，如果是使用Git Shell文字模式的狀況下，需要自行輸入指令，如要把新增的檔案加到儲存庫(Repo)則輸入「git add .」，「git add filename」，若要把該檔案從儲存庫中刪除，使用「git rm filename」，那如果使用TortoiseGit軟體，也需要在該檔案點選右鍵去找到新增或刪除該檔案的功能選項，但使用GitHub Windows軟體，不需要在要新增或刪除的檔案去操作功能選項，也不需要自行下Git指令，只要打開GitHub Windows軟體，它會自動把檔案異動內容做處理並顯示在軟體中，如下圖的『Uncommitted changes』，將還沒有提交(Commit)前的異動內容顯示於此區塊。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Commit-001.png" src="../../_images/GitHub-Commit-001.png" />
+</div></blockquote>
+</div>
+<div class="section" id="commit-repo">
+<h3>提交 Commit Repo<a class="headerlink" href="#commit-repo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">儲存庫(Repo)中的檔案異動完畢，可以點選『Show』，下方會出現摘要簡介(Summary)及說明(Description)，至少要輸入摘要簡介(Summary)這個輸入欄位，讓其他編輯者了解此次提交(Commit)的目的，那如果要寫的比較詳細，請填寫說明(Description)的輸入欄位，如果在提交前想要看一下檔案的異動詳細內容，可在右方的區塊看到所列出的檔案，每個檔案都可以點選觀看該檔案的修改內容減號『-』代表刪除，加號『+』代表新增，填寫完並且確認完檔案後點選下方的『Commit to master』即可，「master」是分析的名稱。</p>
+<p>上面的操作轉換到Git Shell文字模式下，需要輸入『git commit』，然後會自動在文字編輯器下開起一個檔案，需要在上面輸入這次提交(commit)的訊息，最後儲存檔案結束，如果要快一點的話可以用『git commit -m &#8220;摘要簡介(Summary)&#8221;』即可，此外可以執行『git status』列出此次提交的檔安異動狀況。</p>
+</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Commit-002.png" src="../../_images/GitHub-Commit-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>當點選『Commit to 分析名稱』後，『Uncommitted changes』的文字就會轉變成『Unsynced changes』，那右上方的『Sync』後方就會出現一個數字，該數字代表本機的儲存庫(Repo)執行了幾次的提交(Commit)動作，並且尚未推送(Push)到遠端伺服器中。下方有個『Undo』的按鈕，可以取消這一次的提交(Commit)動作。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Commit-003.png" src="../../_images/GitHub-Commit-003.png" />
+</div></blockquote>
+</div>
+<div class="section" id="push-repo">
+<h3>推送 Push Repo<a class="headerlink" href="#push-repo" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">在軟體畫面右上方的『Sync』後方有數字出現，代表有提交(Commit)動作，而且尚未執行推送(Push)，使用GitHub Windows執行推送(Push)也是非常的簡單，只要在『Sync』上點選一下，就會自動推送到遠端的伺服器中，完成推送(Push)後，『Unsynced changes』下的項目內容就會出現在『History』中，而且『Sync』後方的數字也會不見。</p>
+<p>這個『Sync』的動作，在Git Shell文字模式下，就是輸入Git指令『git push』。</p>
+</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Commit-004.png" src="../../_images/GitHub-Commit-004.png" />
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="go38-git-repo">
+<h2>存取 Go38 Git Repo<a class="headerlink" href="#go38-git-repo" title="Permalink to this headline">¶</a></h2>
+<p>使用GitHub Windows存取GitHub平台的存取很簡單方便，因為GitHub Windows本來就是專為GitHub平台操作使用的軟體，那如果要操作其他Git伺服器的儲存庫(Repo)，例如Go38伺服器上的Git儲存庫(Repo)，要如何操作使用呢？以下會說明該如何操作，主要有幾個步驟和GitHub Widnwos不同，如下</p>
+<div class="section" id="public-key">
+<h3>寄送公鑰(Public Key)<a class="headerlink" href="#public-key" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>因為在安裝GitHub Windows軟體時，會自動產生一組公鑰「github_rsa.pub」與私鑰「github_rsa」在使用者家目錄下的「.ssh」資料夾中，打開「.ssh」資料夾，將公鑰「github_rsa.pub」複製一份，然後變更檔案名稱，然後將該檔案傳送給Go38管理者，將會使用此公鑰建立使用者。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-sshkey.png" src="../../_images/GitHub-sshkey.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h3>複製Clone Repo<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>當使用者建立完成後要複製(Clone)Go38上的儲存庫(Repo)，這裡的操作方式和GitHub平台不同，GitHub Windows可以直接使用GitHub的帳號登入並直接點複製(Clone)，但這裡我們需要使用Git Shell的文字模式執行『git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;allen&#46;go38&#46;net">git<span>&#64;</span>allen<span>&#46;</span>go38<span>&#46;</span>net</a>:MoodleBook.git』，將Go38上的MoodleBook儲存庫(Repo)複製(Clone)到本機電腦中，如下圖</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Shell-001.png" src="../../_images/GitHub-Shell-001.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id10">
+<h3>加入至GitHub Windows<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>打開GitHub Windows軟體，怎麼看好像都沒有方法可以加入從別的伺服器中複製(Clone)下來的儲存庫(Repo)，在這有找到兩種加入的方法，如下</p>
+<div class="section" id="scan-for-repositories">
+<h4>方法一：Scan for repositories<a class="headerlink" href="#scan-for-repositories" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>點選GitHub Windows右上角的齒輪(tools and options)，點選功能選單中的『Options...』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Option-001.png" src="../../_images/GitHub-Option-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>點選後會出現如下圖的Options視窗，尋找畫面中的放大鏡圖案『Scan for repositories』，並點選它</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-Option-002.png" src="../../_images/GitHub-Option-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>此時就會出現如下圖『Scan for repositories』的畫面，畫面中會出現在本機所找到的儲存庫(Repo)，經過測試GitHub Windows只會找使用者家目錄「C:Users使用者名稱」以下的資料夾，如果是放在其他資料夾下沒辦法被自動搜尋到的儲存庫(Repo)可使用方法二加入。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-AddOtherGit-001.png" src="../../_images/GitHub-AddOtherGit-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>在本機電腦中可能有很多的儲存庫(Repo)，如下圖就有找到兩個，預設都是勾選的，因為只要加入MoodleBook，所以把其他的儲存庫(Repo)取消勾選後，再點選下方的『Add』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-AddOtherGit-002.png" src="../../_images/GitHub-AddOtherGit-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>下圖為加入Go38的MoodleBook存儲庫(Repo)後的狀況，會發現所加入的MoodleBook存儲庫(Repo)會放在標籤『Other』下方，而GitHub的儲存庫會被歸類在『GitHub』標籤下</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-AddOtherGit-003.png" src="../../_images/GitHub-AddOtherGit-003.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id11">
+<h4>方法二：拖曳資料夾<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>第二種方法最簡單，只要打開檔案管理員，找到存放儲存庫(Repo)的資料夾，然後點選滑鼠左鍵不放，然後拉動拖曳儲存庫(Repo)的資料夾到GitHub Windows上，會看到出現『Drop to add repository』，然後放開滑鼠左鍵即可</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-DropToAdd-001.png" src="../../_images/GitHub-DropToAdd-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>接著看到MoodleBook已經被加入到『Other』標籤下</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/GitHub-DropToAdd-002.png" src="../../_images/GitHub-DropToAdd-002.png" />
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">共筆寫作操作流程(GitHub)</a><ul>
+<li><a class="reference internal" href="#id5">相關軟體安裝</a><ul>
+<li><a class="reference internal" href="#id6">GitHub Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#github-repo">存取 Github Repo</a><ul>
+<li><a class="reference internal" href="#clone-repo">複製Clone Repo</a></li>
+<li><a class="reference internal" href="#id8">檔案新增刪除修改</a></li>
+<li><a class="reference internal" href="#commit-repo">提交 Commit Repo</a></li>
+<li><a class="reference internal" href="#push-repo">推送 Push Repo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#go38-git-repo">存取 Go38 Git Repo</a><ul>
+<li><a class="reference internal" href="#public-key">寄送公鑰(Public Key)</a></li>
+<li><a class="reference internal" href="#id9">複製Clone Repo</a></li>
+<li><a class="reference internal" href="#id10">加入至GitHub Windows</a><ul>
+<li><a class="reference internal" href="#scan-for-repositories">方法一：Scan for repositories</a></li>
+<li><a class="reference internal" href="#id11">方法二：拖曳資料夾</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">共同寫作操作流程</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../ubuntu/index.html"
+                        title="next chapter">Ubuntu 安裝</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/_doc/writing/index-github.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ubuntu/index.html" title="Ubuntu 安裝"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="共同寫作操作流程"
+             >previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, 陳國華.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

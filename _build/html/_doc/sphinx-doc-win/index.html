@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SPHINX-DOC 安裝 (Windows) &mdash; 系統安裝記錄 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="系統安裝記錄 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="GIT、Gitolite3、Gitweb安裝" href="../git/index.html" />
+    <link rel="prev" title="SPHINX-DOC 安裝" href="../sphinx-doc/index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../git/index.html" title="GIT、Gitolite3、Gitweb安裝"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sphinx-doc/index.html" title="SPHINX-DOC 安裝"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sphinx-doc-windows">
+<h1>SPHINX-DOC 安裝 (Windows)<a class="headerlink" href="#sphinx-doc-windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>測試環境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>作業系統：Windows 7(64位元)</li>
+<li>Python：3.4.1</li>
+<li>SPHINX-DOC：1.2.3</li>
+</ul>
+</div>
+<div class="section" id="python">
+<h2>下載 Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.python.org/">Python官方網站</a></li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Download-001.png" src="../../_images/Python-Download-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li><a class="reference external" href="https://www.python.org/downloads/">Python Download</a> ：進入下載頁面後，選擇『Download Python 3.x.x』下載Python3的版本</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Download-002.png" src="../../_images/Python-Download-002.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>安裝 Python<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>執行Python安裝程式『python-3.4.1.msi』，使用預設值『Install for all users』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Install-001.png" src="../../_images/Python-Install-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>選擇安裝目錄，使用預設值『C:\Python34\』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Install-002.png" src="../../_images/Python-Install-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>客製化安裝，這地方移到最後一個項目『Add python.exe to Path』，這預設是沒有選的，因為是第一次安裝，所以就把這個選項一起安裝，主要是將「C:\Python34\;C:\Python34\Scripts;」這一串文字自動加入到環境變數的Path中，如果沒有選取安裝，需自行手動加入。</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Install-003.png" src="../../_images/Python-Install-003.png" />
+</div></blockquote>
+<ul class="simple">
+<li>軟體安裝進度</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Install-004.png" src="../../_images/Python-Install-004.png" />
+</div></blockquote>
+<ul class="simple">
+<li>安裝完成</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Install-005.png" src="../../_images/Python-Install-005.png" />
+</div></blockquote>
+<ul class="simple">
+<li>執行命令提示字元「開始-&gt;所有程式-&gt;附屬應用程式-&gt;命令提示字元」，然後直接輸入『python』，就會看到如下的畫面，如果沒有請先確認系統環境變數的path是否有設定python的資料夾路徑「C:\Python34\;C:\Python34\Scripts;」</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Install-006.png" src="../../_images/Python-Install-006.png" />
+</div></blockquote>
+</div>
+<div class="section" id="easy-install">
+<h2>安裝easy_install<a class="headerlink" href="#easy-install" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>下載 <a class="reference external" href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a> , 如下圖所下載的「ez_setup.py」存放在「C:\Users\Allen\」下並使用命令提示字元執行『python ez_setup.py』</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-ezSetup-001.png" src="../../_images/Python-ezSetup-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>下圖為安裝完會的畫面</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-ezSetup-002.png" src="../../_images/Python-ezSetup-002.png" />
+</div></blockquote>
+</div>
+<div class="section" id="sphinx">
+<h2>安裝Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>安裝好『easy_install』，接著輸入『easy_install sphinx』，安裝的時後需要一點時間</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Sphinx-001.png" src="../../_images/Python-Sphinx-001.png" />
+</div></blockquote>
+<ul class="simple">
+<li>下圖為安裝完成的畫面</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Sphinx-002.png" src="../../_images/Python-Sphinx-002.png" />
+</div></blockquote>
+<ul class="simple">
+<li>安裝完成後，請輸入『sphinx-build』測試是否可以正常執行，如下圖</li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/Python-Sphinx-003.png" src="../../_images/Python-Sphinx-003.png" />
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>參考網站連結<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://sphinx-doc.org/install.html">Sphinx-Doc Install</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SPHINX-DOC 安裝 (Windows)</a><ul>
+<li><a class="reference internal" href="#id1">測試環境</a></li>
+<li><a class="reference internal" href="#python">下載 Python</a></li>
+<li><a class="reference internal" href="#id3">安裝 Python</a></li>
+<li><a class="reference internal" href="#easy-install">安裝easy_install</a></li>
+<li><a class="reference internal" href="#sphinx">安裝Sphinx</a></li>
+<li><a class="reference internal" href="#id4">參考網站連結</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../sphinx-doc/index.html"
+                        title="previous chapter">SPHINX-DOC 安裝</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../git/index.html"
+                        title="next chapter">GIT、Gitolite3、Gitweb安裝</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/_doc/sphinx-doc-win/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../git/index.html" title="GIT、Gitolite3、Gitweb安裝"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sphinx-doc/index.html" title="SPHINX-DOC 安裝"
+             >previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, 陳國華.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

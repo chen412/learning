@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SPHINX-DOC 安裝 &mdash; 系統安裝記錄 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="系統安裝記錄 1.0 documentation" href="../../index.html" />
+    <link rel="next" title="SPHINX-DOC 安裝 (Windows)" href="../sphinx-doc-win/index.html" />
+    <link rel="prev" title="Welcome to 系統安裝記錄’s documentation!" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sphinx-doc-win/index.html" title="SPHINX-DOC 安裝 (Windows)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../index.html" title="Welcome to 系統安裝記錄’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sphinx-doc">
+<h1>SPHINX-DOC 安裝<a class="headerlink" href="#sphinx-doc" title="Permalink to this headline">¶</a></h1>
+<p>目前對於一般使用者或系統開發者在記錄自已的學習心得的方式會隨著不同環境及狀況而所使用的工具有所不同，當在網路尚未普及到家家戶戶都接ADSL時，可能大都是寫在記事本、Microsft Office系列的文書軟體，但隨著網路的普及化加上全球資訊網出現，陸續出現BLOG、WIKI，到現在的雲端服務，如evernote、google雲端文件、Microsft Office系列等…，不論在桌上型電腦、筆記型電腦、平板、手機，在不同的作業系統都可以存取，但這些都注重於快速記事，如果要把所記錄的東西整合後出版到網路上公開，發佈成網頁、pdf、epub等格式，在出版這塊或許office是一般使用者最常用的，也可以發佈成PDF，而EPUB可以透過其他的軟體轉換，如果是發佈成網頁或許少數幾頁的文件是沒問題，大不了網頁內容長了點，但如果是一本書或使用手冊呢？將數十頁或數百頁的內容發佈成一個網頁，這就不太好觀看及使用了，這樣還需要花費更多的人力去建置網頁，檔案格式又不同了，當這個時後書本、使用手冊要改版時將會要修改多個版本的內容，再加上章節內容抽換時會出現文件格式變動的問題等…。上述的問題，在以建立書本、使用手冊為主，所要的需求如下：</p>
+<ul class="simple">
+<li>編輯一份文件，即可同時發佈成網頁、PDF、EPUB等格式</li>
+<li>在文件改版，可容易抽換章節內容</li>
+<li>可在不同的文件編輯器上寫作</li>
+<li>便於多人共筆寫作</li>
+</ul>
+<p>綜合以上的需求，SPHINX-DOC可以幫我們完成這個任務
+SPHINX-DOC有別於其他的文書出版軟體，SPHINX-DOC起初是為了創建新的 <a class="reference external" href="https://doc.python.org/3.5/index.html">PYTHON使用者手冊</a> 而產生的，文件的內容是使用reStructuredText(reST)標記語言所編寫，reST是種跨平台及任何文字編號器都可以編輯，而且是個易讀的純文字標記語法，主要是透過Python中的Docutils元件將純文字轉換成不同的格式。</p>
+<div class="section" id="id1">
+<h2>測試環境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>作業系統：Ubuntu 14.04</li>
+<li>Python：3.4.0</li>
+<li>SPHINX-DOC：1.2.2</li>
+<li>Apache：2.4.7</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>安裝SPHINX-DOC<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>本系統使用python3的版本做架設，在ubuntu有sphinx-doc套件可以直接安裝，而且是最新的版本1.2.2的版本，套件有分Python2和Python3的版本，兩種版本所產生出來的內容經比對過後，主要差異在因為中文使用Unicode，使用Python2的版本所產生出來的內容，如果有中文字，在前方會加一個&#8221;u&#8221;。</p>
+<dl class="docutils">
+<dt><strong>Python2和Python3中文差異</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>python2：project = u&#39;中文專案&#39;
+python3：project = &#39;中文專案&#39;
+</pre></div>
+</div>
+</dd>
+<dt><strong>安裝sphinx使用python3</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>sudo apt-get install python3-sphinx
+</pre></div>
+</div>
+</dd>
+<dt><strong>安裝sphinx使用python2</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>sudo apt-get install python-sphinx
+</pre></div>
+</div>
+</dd>
+</dl>
+<p><a class="reference external" href="InstallRecord.html#sphinx-doc">安裝執行畫面</a></p>
+</div>
+<div class="section" id="id4">
+<h2>建立SPHINX-DOC專案<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="InstallRecord.html#id2">建立專案執行畫面</a></p>
+</div>
+<div class="section" id="html">
+<h2>匯出HTML網站<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h2>
+<p>在Ubuntu下，不論是Python2或是Python3都是用「 <strong>make html</strong> 」指令建立HTML網站</p>
+<dl class="docutils">
+<dt><strong>匯出HTML指令</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>make html
+</pre></div>
+</div>
+</dd>
+<dt><strong>執行畫面</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>allen@uServer:~/git/allen$ make html
+sphinx-build -b html -d _build/doctrees   . _build/html
+Making output directory...
+Running Sphinx v1.2.2
+loading pickled environment... done
+building [html]: targets for 6 source files that are out of date
+updating environment: 0 added, 0 changed, 0 removed
+looking for now-outdated files... none found
+preparing documents... done
+writing output... [100%] index
+writing additional files... genindex search
+copying static files... done
+copying extra files... done
+dumping search index... done
+dumping object inventory... done
+build succeeded.
+
+Build finished. The HTML pages are in _build/html.
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="pdf">
+<h2>匯出PDF<a class="headerlink" href="#pdf" title="Permalink to this headline">¶</a></h2>
+<p>在全英文的內容下直接執行匯出PDF是沒有問題，但內容出現有中文的時後匯出就要做另外設定及中文字型的安裝與設定，如果Ubuntu是安裝中文版，文鼎字型會自動安裝好，英文版則需要自行安裝中文字型，安裝方式如下</p>
+<p><strong>安裝文鼎標楷體與細明體</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo apt-get install fonts-arphic-ukai fonts-arphic-uming
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>fonts-arphic-ukai - 「文鼎 PL UKai」 (AR PL UKai) 中文萬國碼 TrueType 楷體字型</li>
+<li>fonts-arphic-uming - 「文鼎 PL UMing」 (AR PL UMing) 中文萬國碼 TrueType 明體字型</li>
+</ul>
+<p><strong>檢查系統中已安裝的中文字型</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>fc-list :lang=zh
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>執行畫面</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>allen@uServer:~$ fc-list :lang=zh
+/usr/share/fonts/truetype/arphic/uming.ttc: AR PL UMing TW MBE:style=Light
+/usr/share/fonts/truetype/arphic/ukai.ttc: AR PL UKai CN:style=Book
+/usr/share/fonts/truetype/arphic/ukai.ttc: AR PL UKai HK:style=Book
+/usr/share/fonts/truetype/arphic/ukai.ttc: AR PL UKai TW:style=Book
+/usr/share/fonts/truetype/arphic/ukai.ttc: AR PL UKai TW MBE:style=Book
+/usr/share/fonts/truetype/arphic/uming.ttc: AR PL UMing TW:style=Light
+/usr/share/fonts/truetype/arphic/uming.ttc: AR PL UMing CN:style=Light
+/usr/share/fonts/truetype/arphic/uming.ttc: AR PL UMing HK:style=Light
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>安裝匯出pdf所需要的套件</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>設定conf.py</strong> ：為了要在pdf中顯示中文，在檔案中找到latex_elements，加入下面的文字，設定中文字型。</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>&#39;preamble&#39;: r&#39;&#39;&#39;
+\usepackage{fontspec}     % 引入 fontsepc，這樣才可以用下面的設定字型的指令
+\setmainfont{AR PL UMing TW}  % 預設字型
+\setsansfont{AR PL UMing TW}  % sans family 字型
+\setromanfont{AR PL UMing TW} % roman 字型
+\setmonofont{AR PL UMing TW}  % 等寬字型
+
+\XeTeXlinebreaklocale &quot;zh&quot;          % 設定斷行演算法為中文
+\XeTeXlinebreakskip = 0pt plus 1pt  % 設定中文字距與英文字距
+&#39;&#39;&#39;,
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>如果是在pytoh2的版本，在conf.py檔案最前面加入下面的文字以正常顯示中文</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>import sys, os
+# Avoid unicode problem for python2
+if sys.version_info.major == 2:
+    reload(sys)
+    sys.setdefaultencoding(&#39;utf8&#39;)
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>如果沒有設定，會出現下面的錯誤訊息</strong></p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre>Encoding error:
+&#39;ascii&#39; codec can&#39;t decode byte 0xe5 in position 385: ordinal not in range(128)
+The full traceback has been saved in /tmp/sphinx-err-eDbiuU.log, if you want to report the issue to the developers.
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="epub">
+<h2>匯出ePub<a class="headerlink" href="#epub" title="Permalink to this headline">¶</a></h2>
+<p>在Ubuntu下，不論是Python2或是Python3都是用「 <strong>make epub</strong> 」指令建立ePub格式的電子書</p>
+<dl class="docutils">
+<dt><strong>匯出HTML指令</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>make epub
+</pre></div>
+</div>
+</dd>
+<dt><strong>執行畫面</strong></dt>
+<dd><div class="first last highlight-text"><div class="highlight"><pre>allen@uServer:~/git/allen$ make epub
+sphinx-build -b epub -d _build/doctrees   . _build/epub
+Making output directory...
+Running Sphinx v1.2.2
+loading pickled environment... done
+building [epub]: targets for 6 source files that are out of date
+updating environment: 0 added, 0 changed, 0 removed
+looking for now-outdated files... none found
+preparing documents... done
+writing output... [100%] index
+writing additional files... genindex search
+copying static files... done
+copying extra files... done
+writing mimetype file...
+writing META-INF/container.xml file...
+writing content.opf file...
+WARNING: unknown mimetype for _static/test, ignoring
+writing toc.ncx file...
+writing sphinx.epub file...
+build succeeded, 1 warning.
+
+Build finished. The epub file is in _build/epub.
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id6">
+<h2>參考網站連結<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SPHINX-DOC 安裝</a><ul>
+<li><a class="reference internal" href="#id1">測試環境</a></li>
+<li><a class="reference internal" href="#id2">安裝SPHINX-DOC</a></li>
+<li><a class="reference internal" href="#id4">建立SPHINX-DOC專案</a></li>
+<li><a class="reference internal" href="#html">匯出HTML網站</a></li>
+<li><a class="reference internal" href="#pdf">匯出PDF</a></li>
+<li><a class="reference internal" href="#epub">匯出ePub</a></li>
+<li><a class="reference internal" href="#id6">參考網站連結</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../index.html"
+                        title="previous chapter">Welcome to 系統安裝記錄&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../sphinx-doc-win/index.html"
+                        title="next chapter">SPHINX-DOC 安裝 (Windows)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/_doc/sphinx-doc/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sphinx-doc-win/index.html" title="SPHINX-DOC 安裝 (Windows)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../index.html" title="Welcome to 系統安裝記錄’s documentation!"
+             >previous</a> |</li>
+        <li><a href="../../index.html">系統安裝記錄 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, 陳國華.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
