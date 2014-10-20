@@ -12,6 +12,9 @@ test4
 
 test5
 
+
+test6
+
 相關連結
 ========
 `Git 客製化 - Git Hooks <http://git-scm.com/book/zh-tw/Git-客製化-Git-Hooks>`_ 
