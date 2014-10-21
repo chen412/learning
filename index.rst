@@ -13,6 +13,11 @@ Contents:
 
    _doc/sphinx-doc/index.rst
    _doc/sphinx-doc-win/index.rst
+   _doc/git/index.rst
+   _doc/writing/index.rst
+   _doc/writing/index-github.rst
+   _doc/ubuntu/index.rst 
+   _doc/software/index.rst
    
 
 Indices and tables
