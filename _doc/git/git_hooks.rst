@@ -7,7 +7,7 @@ Git Hooks
 # test2
 鑫的的
 
-得得
+得得對
 test9
 對
 test10
