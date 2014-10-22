@@ -2,29 +2,7 @@
 Git Hooks
 *********
 
-test
 
-test2
-
-test3
-
-test4
-
-test5
-
-test6
-
-test7
-
-<<<<<<< HEAD
-=======
-test8
-
-test9
-
-test10 
-
->>>>>>> dcd5ed946db544ecb519b3ae61f6ef87a375ee83
 相關連結
 ========
 `Git 客製化 - Git Hooks <http://git-scm.com/book/zh-tw/Git-客製化-Git-Hooks>`_ 
