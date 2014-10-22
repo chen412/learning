@@ -6,7 +6,30 @@
 \BOOKMARK [1][-]{section.1.5}{匯出PDF}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.6}{匯出ePub}{chapter.1}% 7
 \BOOKMARK [1][-]{section.1.7}{參考網站連結}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{GIT 安裝}{}% 9
-\BOOKMARK [0][-]{chapter.3}{Ubuntu 安裝}{}% 10
-\BOOKMARK [0][-]{chapter.4}{test中文測試}{}% 11
-\BOOKMARK [0][-]{chapter.5}{Indices\040and\040tables}{}% 12
+\BOOKMARK [0][-]{chapter.2}{SPHINX-DOC 安裝 \(Windows\)}{}% 9
+\BOOKMARK [1][-]{section.2.1}{測試環境}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{下載 Python}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{安裝 Python}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.4}{安裝easy_install}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.5}{安裝Sphinx}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.6}{參考網站連結}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{GIT、Gitolite3、Gitweb安裝}{}% 16
+\BOOKMARK [1][-]{section.3.1}{GIT安裝}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Gitolite3安裝}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{安裝GitWeb}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{參考網站連結}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Git\040Hooks}{}% 21
+\BOOKMARK [1][-]{section.4.1}{相關連結}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{共同寫作操作流程}{}% 23
+\BOOKMARK [1][-]{section.5.1}{相關軟體安裝}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{建立使用者帳號\(SSH-KEY\)}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.3}{上傳公鑰\(Public Key\)}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.4}{存取檔案庫\(Repo\)}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.5}{GitWeb 線上觀看修改內容}{chapter.5}% 28
+\BOOKMARK [0][-]{chapter.6}{Ubuntu 安裝}{}% 29
+\BOOKMARK [0][-]{chapter.7}{軟體安裝}{}% 30
+\BOOKMARK [0][-]{chapter.8}{共筆寫作操作流程\(GitHub\)}{}% 31
+\BOOKMARK [1][-]{section.8.1}{相關軟體安裝}{chapter.8}% 32
+\BOOKMARK [1][-]{section.8.2}{存取 Github Repo}{chapter.8}% 33
+\BOOKMARK [1][-]{section.8.3}{存取 Go38 Git Repo}{chapter.8}% 34
+\BOOKMARK [0][-]{chapter.9}{Indices\040and\040tables}{}% 35

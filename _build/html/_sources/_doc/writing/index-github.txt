@@ -3,7 +3,12 @@
 ************************
 在上一版的「共同寫作操作流程」文件中是使用 `TortoiseGit <https://code.google.com/p/tortoisegit/>`_ 存取Git伺服器上的儲存庫(Repo)，因為最後使用 `GitHub <https://github.com/>`_ 平台，所以這篇主要是說明如何透過GitHub的軟體「`GitHub Windows <https://windows.github.com/>`_」共同存取寫作文件，當然也可以透過「`GitHub Windows <https://windows.github.com/>`_」存取Go38 Git伺服器上的儲存庫(Repo)，在「`GitHub Windows <https://windows.github.com/>`_ 」軟體的操作上非常的簡單，而且也會自動產生ssh-key，節省了很多的步驟，而且所產生的ssh-key也可以直接供Go38的Git伺服器所使用，而Go38伺服器上的儲存庫(Repo)也可以使用「`GitHub Windows <https://windows.github.com/>`_」存取，下方的流程式為共筆寫作的流程圖。
 
-.. image:: pic/FlowChart.png
+
+ .. image:: pic/Flowchart.png
+   :height: 300 px
+   :width: 400 px
+   :align: center
+
 
 相關軟體安裝
 ============
@@ -13,11 +18,15 @@ GitHub Windows
 
 * 打開 `GitHub Windows <https://windows.github.com/>`_ 網站，首頁就有『Download GitHub for Windows』連結，點選此連結下載
 
- .. image:: pic/GitHub-Install-001.png
+ .. image:: pic/GitHub-Install-001.png 
+ 	:align: center
 
 * 下載完後執行安裝程式『GitHubSetup.exe』，如果電腦已經安裝過GitHub Windows，執行後會直接啟動GitHub Windows程式；若沒安裝過，執行後會檢查電腦所需要的元件，如下圖在第一次安裝由於電腦中沒有『Microsoft .NET Framework 4.5(x86 and x64)』這個元件，會要求安裝，點選下方的『Accept』即可
 
  .. image:: pic/GitHub-Install-002.png
+ 	:height: 440px
+ 	:width: 448px
+ 	:align: center
  .. image:: pic/GitHub-Install-003.png
 
 * 如果作業系統已安裝過『Microsoft .NET Framework 4.5(x86 and x64)』元件，執行後就直接出現GitHub安裝視窗，直接點選『Install』開始安裝
@@ -71,7 +80,7 @@ GitHub Windows
  .. image:: pic/GitHub-Clone-006.png
 
 檔案新增刪除修改
-----------------
+-----------------
 
 * 把共筆的儲檔庫(Repo)複製(Clone)到本機資料夾中後就可以開始編寫內容，當想把編寫好的內容放到遠端時，如果是使用Git Shell文字模式的狀況下，需要自行輸入指令，如要把新增的檔案加到儲存庫(Repo)則輸入「git add .」，「git add filename」，若要把該檔案從儲存庫中刪除，使用「git rm filename」，那如果使用TortoiseGit軟體，也需要在該檔案點選右鍵去找到新增或刪除該檔案的功能選項，但使用GitHub Windows軟體，不需要在要新增或刪除的檔案去操作功能選項，也不需要自行下Git指令，只要打開GitHub Windows軟體，它會自動把檔案異動內容做處理並顯示在軟體中，如下圖的『Uncommitted changes』，將還沒有提交(Commit)前的異動內容顯示於此區塊。
 
@@ -124,7 +133,7 @@ GitHub Windows
 打開GitHub Windows軟體，怎麼看好像都沒有方法可以加入從別的伺服器中複製(Clone)下來的儲存庫(Repo)，在這有找到兩種加入的方法，如下
 
 方法一：Scan for repositories
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * 點選GitHub Windows右上角的齒輪(tools and options)，點選功能選單中的『Options...』
 
  .. image:: pic/GitHub-Option-001.png
@@ -146,7 +155,7 @@ GitHub Windows
  .. image:: pic/GitHub-AddOtherGit-003.png
 
 方法二：拖曳資料夾
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 * 第二種方法最簡單，只要打開檔案管理員，找到存放儲存庫(Repo)的資料夾，然後點選滑鼠左鍵不放，然後拉動拖曳儲存庫(Repo)的資料夾到GitHub Windows上，會看到出現『Drop to add repository』，然後放開滑鼠左鍵即可
 
